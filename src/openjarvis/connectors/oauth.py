@@ -691,6 +691,7 @@ def run_connector_oauth(
         **provider.extra_auth_params,
     }
     auth_url = f"{provider.auth_endpoint}?{urlencode(params)}"
+    print(f"\n[JARVIS_AUTH_URL] {auth_url}\n", flush=True)
 
     # Open browser and wait for callback
     open_browser(auth_url)

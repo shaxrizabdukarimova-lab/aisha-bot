@@ -784,7 +784,7 @@ class CloudEngine(InferenceEngine):
         tool_calls: list[Dict[str, Any]] = []
         candidates = getattr(resp, "candidates", None)
         if candidates:
-            parts = getattr(candidates[0].content, "parts", [])
+            parts = getattr(candidates[0].content, "parts", []) or []
             for part in parts:
                 if hasattr(part, "function_call") and part.function_call:
                     fc = part.function_call

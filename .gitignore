@@ -130,3 +130,10 @@ learning.db
 minion_logs/
 *.oj-debug.json
 oj-debug.*.json
+
+# Portable binaries and secrets
+node.exe
+railway.exe
+uv.exe
+client_secret.json
+examples/.chat_memory/
