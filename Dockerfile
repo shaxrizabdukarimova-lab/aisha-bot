@@ -10,10 +10,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install uv for fast dependency installation
 RUN pip install --no-cache-dir uv
 
-# Copy the project files
-COPY pyproject.toml README.md ./
-COPY src/ src/
-COPY examples/ examples/
+# Copy all project files (Railway automatically respects .gitignore, so exe/secrets are ignored)
+COPY . .
 
 # Install the project and optional dependencies
 RUN uv pip install --system ".[inference-cloud,inference-google,channel-telegram,channel-gmail]"
